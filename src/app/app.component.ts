@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  selectedDate: Date;
+  items = [
+    { id: 1, title: 'Panel header 1', content: 'Panel header 1' },
+    { id: 2, title: 'Panel header 2', content: 'Panel header 2' }
+  ];
 }
