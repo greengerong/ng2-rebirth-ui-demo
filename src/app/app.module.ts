@@ -6,6 +6,7 @@ import { RebirthUIModule } from 'ng2-rebirth-ui';
 import { RebirthHttpModule } from 'rebirth-http';
 
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot([]),
     HttpModule,
     RebirthUIModule.forRoot()
   ],

@@ -1,36 +1,40 @@
-<h2>DatePicker</h2>
-<form class="form-horizontal">
-  <div class="form-group">
-    <label class="col-sm-2 control-label">DOB:</label>
-    <div class="col-sm-10">
-      <div class="input-group">
-        <input class="form-control" placeholder="yyyy-MM-dd"
-               name="dp" [(ngModel)]="selectedDate" reDatePicker #datePicker="datePicker">
-        <div class="input-group-addon" (click)="datePicker.toggle($event)">
-          <i class="glyphicon glyphicon-calendar"></i>
+<re-menu-bar [menuOptions]="menus" [type]="'sidebar'"></re-menu-bar>
+
+<div class="container main">
+  <h2>DatePicker</h2>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">DOB:</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-MM-dd"
+                 name="dp" [(ngModel)]="selectedDate" reDatePicker #datePicker="datePicker">
+          <div class="input-group-addon" (click)="datePicker.toggle($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Select date:</label>
-    <div class="col-sm-10">
-      <pre>{{(selectedDate | date : 'yyyy-MM-dd HH:mm') || 'No date select!'}}</pre>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Select date:</label>
+      <div class="col-sm-10">
+        <pre>{{(selectedDate | date : 'yyyy-MM-dd HH:mm') || 'No date select!'}}</pre>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
 
 
-<h2>accordion</h2>
-<re-accordion type="success">
-  <ng-container *ngFor="let item of items">
-    <re-accordion-item id="{{item.id}}">
-      <re-accordion-header>
-        {{item.title}}
-      </re-accordion-header>
-      <re-accordion-body>
-        {{item.content}}
-      </re-accordion-body>
-    </re-accordion-item>
-  </ng-container>
-</re-accordion>
+  <h2>accordion</h2>
+  <re-accordion type="success">
+    <ng-container *ngFor="let item of items">
+      <re-accordion-item id="{{item.id}}">
+        <re-accordion-header>
+          {{item.title}}
+        </re-accordion-header>
+        <re-accordion-body>
+          {{item.content}}
+        </re-accordion-body>
+      </re-accordion-item>
+    </ng-container>
+  </re-accordion>
+</div>
