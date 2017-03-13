@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Jsonp, URLSearchParams } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -41,4 +42,24 @@ export class AppComponent {
       }
     ]
   };
+
+  constructor(private jsonp: Jsonp) {
+
+  }
+
+  onSearch(term) {
+    return this.searchWiki(term);
+  }
+
+  searchWiki(term) {
+    const params = new URLSearchParams();
+    params.set('search', term);
+    params.set('action', 'opensearch');
+    params.set('format', 'json');
+    params.set('callback', 'JSONP_CALLBACK');
+
+    return this.jsonp
+      .get('https://en.wikipedia.org/w/api.php', { search: params })
+      .map(response => <string[]> response.json()[1]);
+  }
 }

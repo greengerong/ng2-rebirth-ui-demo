@@ -37,4 +37,16 @@
       </re-accordion-item>
     </ng-container>
   </re-accordion>
+
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="language" class="col-sm-2 control-label">Search wiki:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="wiki" id="wiki"
+               [(ngModel)]="selectItem2" reAutoComplete [onSearch]="onSearch.bind(this)"/>
+      </div>
+    </div>
+    <pre>{{(selectItem2 | json) || 'No search result!'}}</pre>
+  </form>
 </div>
