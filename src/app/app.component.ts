@@ -8,6 +8,7 @@ import { Jsonp, URLSearchParams } from '@angular/http';
 })
 export class AppComponent {
   selectedDate: Date;
+  selectItem2: any;
   items = [
     { id: 1, title: 'Panel header 1', content: 'Panel header 1' },
     { id: 2, title: 'Panel header 2', content: 'Panel header 2' }
